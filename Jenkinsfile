@@ -36,8 +36,8 @@ pipeline {
     
         stage('Ansible Pull Docker Image') {
             steps {
-                ansiblePlaybook becomeUser: null, colorized: true, disableHostKeyChecking: true, installation: 'Ansible', inventory: 'nventory',
-                 playbook: 'deploy.yml', sudoUser: null
+                ansiblePlaybook becomeUser: null, colorized: true, disableHostKeyChecking: true, installation: 'Ansible', inventory: 'inventory',
+                 playbook: 'deploy.yml', sudoUser: null, extras: '-e "image_name=adwait2210/spe_minicalc"'
 
             }
         }
